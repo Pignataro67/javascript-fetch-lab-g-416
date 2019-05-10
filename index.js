@@ -3,9 +3,12 @@ const apiUrl = 'https://api.github.com'
 const repo = 'alecgalba/javascript-fetch-lab'
 
 function getIssues() {
-  fetch(`${apiUrl}/repos/${repo}/issues`)
-    .then(res => showIssues(res.json()))
-}
+function getIssues() {
+//   const repo = 'kaileighrose/javascript-fetch-lab'
+//   fetch('https://api.github.com/' + 'repos/' + repo + '/issues')
+//     .then(res => res.json())
+//     .then(json => showIssues(json));
+// }
 
 function showIssues(json) {
   const template = Handlebars.compile(document.getElementById('issues-template').innerHTML)
