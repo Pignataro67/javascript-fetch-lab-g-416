@@ -40,7 +40,7 @@ function showResults(json) {
   var html = templateResults(context);
 }
 
- function forkRepo() {
+  function forkRepo() {
   const token = getToken();
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
   fetch('https://api.github.com/' + 'repos/' + repo + '/forks', {
@@ -49,6 +49,10 @@ function showResults(json) {
     Authorization: `token ${token}`
   }
 })
+    .then(res => res.json())
+    .then(json => showResults(json));
+
+}
 
 function getToken() {
   fetch(`${apiUrl}/repos/${repo}/forks`, {
