@@ -54,13 +54,9 @@ function showResults(json) {
 
 }
 
-function getToken() {
-  fetch(`${apiUrl}/repos/${repo}/forks`, {
-    method: 'POST',
-    headers: {
-      Authorization: `token ${getToken()}`
-    }
-  }).then(res => showResults(res.json()))
+ function getToken() {
+  //change to your token to run in browser, but set
+  //back to '' before committing so all tests pass
   return ''
 }
 
