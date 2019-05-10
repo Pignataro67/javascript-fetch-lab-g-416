@@ -16,19 +16,22 @@ function getIssues() {
   var html = template(context);
 }
 
-function createIssue() {
-  const issueTitle = document.getElementById('title').value
-  const issueBody = document.getElementById('body').value
-  const postData = { title: issueTitle, body: issueBody }
-
-  fetch(`${apiUrl}/repos/${repo}/issues`, {
-    method: 'POST',
-    headers: {
-      Authorization: `token ${getToken()}`
-    },
-    body: JSON.stringify(postData)
-  }).then(res => getIssues())
-}
+ function createIssue() {
+//   const token = getToken();
+//   const postData = {
+//     title: 'test',
+//     body: 'test body'
+//   };
+//   const repo = 'kaileighrose/javascript-fetch-lab'
+//   fetch('https://api.github.com/' + 'repos/' + repo + '/issues', {
+//   method: 'POST',
+//   body: JSON.stringify(postData),
+//   headers: {
+//     Authorization: `token ${token}`
+//   }
+// })
+//     .then(getIssues());
+// }
 
 function showResults(json) {
   const template = Handlebars.compile(document.getElementById('repo-template').innerHTML)
