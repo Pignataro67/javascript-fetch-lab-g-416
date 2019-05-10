@@ -17,21 +17,21 @@ function getIssues() {
 }
 
  function createIssue() {
-//   const token = getToken();
-//   const postData = {
-//     title: 'test',
-//     body: 'test body'
-//   };
-//   const repo = 'kaileighrose/javascript-fetch-lab'
-//   fetch('https://api.github.com/' + 'repos/' + repo + '/issues', {
-//   method: 'POST',
-//   body: JSON.stringify(postData),
-//   headers: {
-//     Authorization: `token ${token}`
-//   }
-// })
-//     .then(getIssues());
-// }
+  const token = getToken();
+  const postData = {
+    title: 'test',
+    body: 'test body'
+  };
+  const repo = 'kaileighrose/javascript-fetch-lab'
+  fetch('https://api.github.com/' + 'repos/' + repo + '/issues', {
+  method: 'POST',
+  body: JSON.stringify(postData),
+  headers: {
+    Authorization: `token ${token}`
+  }
+})
+    .then(getIssues());
+}
 
 function showResults(json) {
   const template = Handlebars.compile(document.getElementById('repo-template').innerHTML)
