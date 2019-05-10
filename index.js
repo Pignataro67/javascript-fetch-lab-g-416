@@ -9,9 +9,11 @@ function getIssues() {
     .then(json => showIssues(json));
 }
 
-function showIssues(json) {
-  const template = Handlebars.compile(document.getElementById('issues-template').innerHTML)
-  document.getElementById('issues').innerHTML = template(json)
+ function showIssues(json) {
+  var source = document.getElementById('issues-template').innerHTML;
+  var template = Handlebars.compile(source);
+  var context = {title: json, body: json};
+  var html = template(context);
 }
 
 function createIssue() {
@@ -55,12 +57,7 @@ function getToken() {
 //     .then(json => showIssues(json));
 // }
 
-// function showIssues(json) {
-//   var source = document.getElementById('issues-template').innerHTML;
-//   var template = Handlebars.compile(source);
-//   var context = {title: json, body: json};
-//   var html = template(context);
-// }
+//
 
 // function createIssue() {
 //   const token = getToken();
