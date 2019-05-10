@@ -34,8 +34,10 @@ function getIssues() {
 }
 
 function showResults(json) {
-  const template = Handlebars.compile(document.getElementById('repo-template').innerHTML)
-  document.getElementById('results').innerHTML = template(json)
+  var sourceResults = document.getElementById('repo-template').innerHTML;
+  var templateResults = Handlebars.compile(sourceResults);
+  var context = {html_url: json, full_name: json};
+  var html = templateResults(context);
 }
 
 function forkRepo() {
